@@ -1,0 +1,8 @@
+
+How to Eecxute(2.7.13): python custom_bloom.py
+Objective: Fast look up of the swift objects in the cluster
+
+1.Reading each file the Logs folder and collection the Swift Object
+2.Calculating the md5 digest of the object and then
+3.Storing/Inserting the object's md5 digest in the Bloom Filter.(Uses Murmur hash function to fill the bit array)
+4.The object is searched using the lookup method of the bloom filter.
