@@ -1,3 +1,7 @@
+Please do in virtual env to add these libs 
+pip install bitarray
+pip install mmh3
+
 
 How to Eecxute(2.7.13): python custom_bloom.py
 Objective: Fast look up of the swift objects in the cluster
