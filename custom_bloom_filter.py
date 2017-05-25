@@ -122,37 +122,37 @@ def lookup(string, bit_array, hash_count, size):
             return False
     return True
 
-# if __name__ == "__main__":
-#
-#
-#     log_files = get_logs()
-#
-#     cbf = CustomBloomFilter(SIZE_OF_BLOOMFILTER, NO_OF_HASH_FUNCTION)
-#
-#     for item_file in log_files:
-#         all_objects = filter_logs(item_file)
-#         for item in all_objects:
-#             # print item
-#             cbf.insert(item)
-#
-#     cbf.persist_bloom(cbf.bit_array)
-#
-#     start = datetime.datetime.now()
-#     list_of_objects = ["Hello", "b732b2689c7e584afa75383840655a56", "9aab2bc5fba3ed3ba42802df1b332bad", "581ac41b3844d3076973ededdcdac009", "581ac41b3844d3076973ededdcdac",
-#                        "ea18f2b812afb9192cb8a4fc9be74bc0", "ea18f2b812afb9192cb8a4fc9be74bbb", "Santosh"]
-#
-#     for i in range(cbf.no_of_filters + 1):
-#         filename = "data{0}.pkl".format(i)
-#         pkl_file = open(filename, 'r')
-#         data1 = pickle.load(pkl_file)
-#         for item in list_of_objects:
-#             # print type(data1)
-#             if (lookup(item, data1, cbf.hash_count, cbf.size)):
-#                 print "Found in Bloom Filter {0}".format(filename)
-#             else:
-#                 print "Not Found in Bloom Filter {0}".format(filename)
-#         pkl_file.close()
-#         print ""
-#
-#     print "-done-"
-#     print "Number of Bloom Filters used: {0}".format(cbf.no_of_filters + 1)
+if __name__ == "__main__":
+
+
+    log_files = get_logs()
+
+    cbf = CustomBloomFilter(SIZE_OF_BLOOMFILTER, NO_OF_HASH_FUNCTION)
+
+    for item_file in log_files:
+        all_objects = filter_logs(item_file)
+        for item in all_objects:
+            # print item
+            cbf.insert(item)
+
+    cbf.persist_bloom(cbf.bit_array)
+
+    start = datetime.datetime.now()
+    list_of_objects = ["Hello", "b732b2689c7e584afa75383840655a56", "9aab2bc5fba3ed3ba42802df1b332bad", "581ac41b3844d3076973ededdcdac009", "581ac41b3844d3076973ededdcdac",
+                       "ea18f2b812afb9192cb8a4fc9be74bc0", "ea18f2b812afb9192cb8a4fc9be74bbb", "Santosh"]
+
+    for i in range(cbf.no_of_filters + 1):
+        filename = "data{0}.pkl".format(i)
+        pkl_file = open(filename, 'r')
+        data1 = pickle.load(pkl_file)
+        for item in list_of_objects:
+            # print type(data1)
+            if (lookup(item, data1, cbf.hash_count, cbf.size)):
+                print "Found in Bloom Filter {0}".format(filename)
+            else:
+                print "Not Found in Bloom Filter {0}".format(filename)
+        pkl_file.close()
+        print ""
+
+    print "-done-"
+    print "Number of Bloom Filters used: {0}".format(cbf.no_of_filters + 1)

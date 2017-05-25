@@ -3,7 +3,9 @@ pip install bitarray
 pip install mmh3
 
 
-How to Eecxute(2.7.13): python custom_bloom.py
+
+
+How to Execute(2.7.13): python python custom_bloom_filter.py
 Objective: Fast look up of the swift objects in the cluster
 
 1.Reading each file the Logs folder and collection the Swift Object
