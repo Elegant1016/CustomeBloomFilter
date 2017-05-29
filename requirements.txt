@@ -25,7 +25,9 @@ pbr==2.0.0
 positional==1.1.1
 post==0.0.0
 public==0.0.0
+py==1.4.33
 pyparsing==2.1.10
+pytest==3.0.7
 python-keystoneclient==3.10.0
 python-swiftclient==3.3.0
 pytz==2017.2
